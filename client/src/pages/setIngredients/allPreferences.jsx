@@ -3,8 +3,7 @@ import Container from 'react-bootstrap/Container'
 import SearchForm from './searchForm/searchForm'
 import AllIngredients from './allIngredients'
 import {
-  Link,
-  Redirect
+  Link
 } from "react-router-dom";
 
 
@@ -24,7 +23,7 @@ class AllPrefrences extends React.Component {
             ingredients={this.props.ingredients}
             deleteIngredient={this.props.deleteIngredient}/>
        </div>
-       <Link id="searchButton" to="/recipies" disabled={this.props.ingredients.length===0}>
+       <Link id="searchButton" to="/recipies" className={this.props.ingredients.length===0?"disabled":""}>
           Search
       </Link>
 </Container>

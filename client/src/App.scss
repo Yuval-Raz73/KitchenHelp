@@ -41,6 +41,18 @@ padding-left: 10%;
     width:100px;
     height:  40px;
     font-size: 18pt;
+    
+    border-radius:4px;
+    background-color:$main-color;
+    color:$alt-white;
+    text-align: center;
+    border: none;
+    text-decoration: 'none' !important;
+    outline:'none';
+    &:focus, &:hover, &:visited, &:link, &:active {
+        text-decoration: none;
+    }
+ 
 }
 
 #searchCol{
@@ -160,6 +172,11 @@ form li:hover{
 
  button:disabled {
     opacity: 0.7;
+}
+
+.disabled{
+    opacity:0.7;
+    pointer-events: none;
 }
 
     
