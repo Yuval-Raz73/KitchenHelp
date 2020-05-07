@@ -1,5 +1,5 @@
 import React from 'react';
-import MyArray from '../../myArray'
+import MyArray from '../../../myArray'
 class AutoComplete extends React.Component {
 
   //update only if the the suggestions have change

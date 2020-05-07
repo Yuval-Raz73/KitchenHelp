@@ -2,20 +2,27 @@ import React from 'react';
 import Jumbo from './jumbotron'
 import AllPrefrences from './allPreferences'
 import Container from 'react-bootstrap/Container'
-import SpoonacularAPI from "../spoonnacularAPI"
 
 class IngredientsMenu extends React.Component {
 
   constructor(props){
     super(props);
     this.state={
+      urlForImages:"",
       ingredients:this.props.ingredients
     }
   }
+
+  async componentDidMount()
+  {
+    let response= await fetch ("/ingimages");
+    let url= await response.json();
+    this.setState({urlForImages: url});
+  }
   //methods for managing ingredients
-  addIngredient=(ing)=>{
+  addIngredient= (ing)=>{
     let ings=this.state.ingredients;
-    ing.image=SpoonacularAPI.getImageURL(ing.image);
+    ing.image=this.state.urlForImages+ing.image;
     ings.push(ing);
     this.setState({ingredients: ings})
   }

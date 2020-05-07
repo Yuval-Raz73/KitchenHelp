@@ -1,8 +1,6 @@
 import React from 'react';
 import SearchBar from './searchBar'
 import AutoComplete from './autoComplete'
-import SpoonacularAPI from "../../spoonnacularAPI" 
-
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 

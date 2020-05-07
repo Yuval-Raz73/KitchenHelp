@@ -1,5 +1,4 @@
-1. fix server ENOENT.
-2. figure myArray.
-3. move all api to server.
-4. add mongodb and timestamp.
-5. add new page.
+- figure myArray.
+- add mongodb and timestamp.
+- add functionality to recipies page.
+- create a single recipe page.

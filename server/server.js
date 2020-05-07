@@ -4,10 +4,6 @@ const path = require('path');
 
 const app = express();
 
-// Serve the static files from the React app
-app.use(express.static(path.join(__dirname, '../client/build')));
-
-// An api endpoint that returns a short list of items
 app.get('/auto/:strToComplete', async (req,res) => {
     try{
     var strToComplete = req.params.strToComplete;
@@ -21,14 +17,20 @@ app.get('/auto/:strToComplete', async (req,res) => {
     }
 });
 
-app.get('/', (req,res) => {
-    console.log("Someone is in the home page.");
-});
+app.get("/ingimages", (req,res)=>
+{
+    let url= Spoonacular.getIngredientImageURL()
+    res.json(url);
+    console.log("Sent url for ingredient images.");
+})
 
-// Handles any requests that don't match the ones above
-app.get('*', (req,res) =>{
-    res.sendFile(path.join(__dirname+'../client/build/index.html'));
-});
+app.get("/getRecipies/:ingredients", async (req,res)=>
+{
+    let response= await Spoonacular.getRecipies(req.params.ingredients,10);
+    res.json(response);
+    console.log("Sent recipies for "+req.params.ingredients+".");
+})
+
 
 const port = process.env.PORT || 5000;
 app.listen(port);

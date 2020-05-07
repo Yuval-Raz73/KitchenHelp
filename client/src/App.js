@@ -2,11 +2,12 @@ import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  Redirect
 } from "react-router-dom";
 import './App.scss';
-import IngredientsMenu from "./components/ingredientsMenu";
-
+import IngredientsMenu from "./pages/setIngredients/ingredientsMenu";
+import Recipies from "./pages/recipies/recipies"
 
 class App extends React.Component {
   constructor(){
@@ -29,9 +30,12 @@ class App extends React.Component {
   return (
     <Router className="app">
       <Switch>
-       <Route path="/">
-        <IngredientsMenu ingredients={this.state.ingredients} setIngredients={this.setIngredients}/>
-       </Route>
+        <Route exact path="/">
+          <IngredientsMenu ingredients={this.state.ingredients} setIngredients={this.setIngredients}/>
+        </Route>
+        <Route exact path="/recipies">
+          <Recipies ingredients={this.state.ingredients}/>
+        </Route>
       </Switch>
     </Router>
   );
