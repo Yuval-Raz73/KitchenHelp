@@ -1,4 +1,5 @@
 - figure myArray.
-- add mongodb and timestamp.
+- arrange server side in order.
+- add mongodb and timestamp to all querys.
 - add functionality to recipies page.
 - create a single recipe page.
