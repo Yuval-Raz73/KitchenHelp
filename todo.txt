@@ -1,7 +1,8 @@
 - figure myArray.
 - handle error connecting to server from client.
 - add try, catch.
-- add limitation to autocomplete query in mongoDB.
+- add limitation to autocomplete query in mongoDB. (?)
+- use trie for autocomplete search.
 - handle error connecting to mongoDB. (to always query spoonacluar api with a boolean field to mongoosemanager).
 - add functionality to recipies page.
 - create a single recipe page.
