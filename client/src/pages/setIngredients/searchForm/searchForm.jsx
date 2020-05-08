@@ -20,12 +20,19 @@ class searchForm extends React.Component {
   //handling input on search bar (change value and search for autocomplete suggestions)
   handleInput= async (val)=>{
     this.setState({selected: null, value:val});
-    let response= await fetch("/auto/"+val);
-    let suggestions=await response.json();
-    suggestions.forEach((sug)=>{ //first letter will be capital
-      sug.name=sug.name[0].toUpperCase()+sug.name.slice(1);
-    })
-    this.setState({suggestions:suggestions})
+    if (val!=="")
+    {
+      let response= await fetch("/auto/"+val);
+      let suggestions=await response.json();
+      suggestions.forEach((sug)=>{ //first letter will be capital
+        sug.name=sug.name[0].toUpperCase()+sug.name.slice(1);
+      })
+      this.setState({suggestions:suggestions})
+    }
+    else
+    {
+      this.setState({suggestions:[]});
+    }
   }
 
   //handle add button

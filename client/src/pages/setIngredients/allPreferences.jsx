@@ -23,7 +23,7 @@ class AllPrefrences extends React.Component {
             ingredients={this.props.ingredients}
             deleteIngredient={this.props.deleteIngredient}/>
        </div>
-       <Link id="searchButton" to="/recipies" className={this.props.ingredients.length===0?"disabled":""}>
+       <Link id="searchButton" to="/recipes" className={this.props.ingredients.length===0?"disabled":""}>
           Search
       </Link>
 </Container>

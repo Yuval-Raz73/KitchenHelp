@@ -1,34 +1,24 @@
 import React from 'react';
 
-class Recipies extends React.Component {
+class Recipes extends React.Component {
     constructor(){
       super();
       this.state={
-        recipies:[]
+        recipes:[]
       }
     }
     async componentDidMount()
     {
-        let ings="";
-
-        this.props.ingredients.forEach(ing => {
-            ings+=ing.name+',';
-        });
-
-        if (ings!=="")
-        {
-            ings=ings.slice(0,-1);
-        }
-        
-        let response= await fetch("/getRecipies/"+ings);
-        let recipies= await response.json();
-        this.setState({recipies:recipies})
+        const ingredientsString= this.props.ingredients.map(ing=>ing.name).join(',');
+        let response= await fetch("/getRecipes/"+ingredientsString);
+        let recipes= await response.json();
+        this.setState({recipes:recipes})
     }
     
     render(){
     return (
         <div>
-            <h1>Recipies for</h1>
+            <h1>Recipes for</h1>
             {this.props.ingredients.map(ing=>
                 {
                     return (
@@ -37,7 +27,7 @@ class Recipies extends React.Component {
                     </h3>
                     )
                 })}
-            {this.state.recipies.map(recipe=>
+            {this.state.recipes.map(recipe=>
                 {
                     return(
                         <p>{recipe.title}</p>
@@ -48,4 +38,4 @@ class Recipies extends React.Component {
     }
   }
 
-  export default Recipies;
+  export default Recipes;

@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import './App.scss';
 import IngredientsMenu from "./pages/setIngredients/ingredientsMenu";
-import Recipies from "./pages/recipies/recipies"
+import Recipes from "./pages/recipes/recipes"
 
 class App extends React.Component {
   constructor(){
@@ -32,8 +32,8 @@ class App extends React.Component {
         <Route exact path="/">
           <IngredientsMenu ingredients={this.state.ingredients} setIngredients={this.setIngredients}/>
         </Route>
-        <Route exact path="/recipies">
-          <Recipies ingredients={this.state.ingredients}/>
+        <Route exact path="/recipes">
+          <Recipes ingredients={this.state.ingredients}/>
         </Route>
       </Switch>
     </Router>

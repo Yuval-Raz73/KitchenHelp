@@ -1,5 +1,8 @@
 - figure myArray.
-- arrange server side in order.
-- add mongodb and timestamp to all querys.
+- handle error connecting to server from client.
+- add try, catch.
+- add limitation to autocomplete query in mongoDB.
+- handle error connecting to mongoDB. (to always query spoonacluar api with a boolean field to mongoosemanager).
 - add functionality to recipies page.
 - create a single recipe page.
+- style all pages.
