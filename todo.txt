@@ -2,8 +2,10 @@
 - handle error connecting to server from client.
 - add try, catch.
 - add limitation to autocomplete query in mongoDB. (?)
-- use trie for autocomplete search.
+- use trie for or indexed search for autocomplete.
 - handle error connecting to mongoDB. (to always query spoonacluar api with a boolean field to mongoosemanager).
+- handle not enought space in mongoDB.
+- handle error connecting to API from server.
 - add functionality to recipies page.
 - create a single recipe page.
 - style all pages.
